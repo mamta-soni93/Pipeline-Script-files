@@ -2,6 +2,7 @@ pipeline {
     agent any
 	tools {
         maven 'maven-3.6.0'
+		java 'JDK'
     }
     stages{
        stage('checkout'){
