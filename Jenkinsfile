@@ -10,6 +10,9 @@ pipeline {
            }
       }
       stage('Maven Build'){
+			tools {
+				jdk 'JDK-1.8'
+			}
            steps{
               bat "mvn clean install"
           }
