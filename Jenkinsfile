@@ -8,7 +8,7 @@ pipeline {
       }
       stage('Maven Build'){
            steps{
-              sh "mvn clean install"
+              bat "mvn clean install"
           }
       }
         stage('Push jar On Artifactory'){
@@ -21,7 +21,7 @@ pipeline {
     }
 }
 def uploadArtifact() {
-sh '''
+bat '''
         curl -sSf -H "X-JFrog-Art-Api:AKCp5ekmsgbnFTK8mAWyiHq3W9q6KuDKGwBAjvNzvT5A2Vst1j4xHSZq3oPwC8V5jmLEqz3dQ" \
        -X PUT \
        -T SimpleMavenProject.jar \
