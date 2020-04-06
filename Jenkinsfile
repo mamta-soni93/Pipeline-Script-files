@@ -18,6 +18,13 @@ pipeline {
 					bat "mvn clean install"
 				} 
       }
+	  stage('Push jar On Artifactory'){
+            steps {
+               script {
+                 uploadArtifact()
+               }
+            }
+       }
     }
 }
 def uploadArtifact() {
