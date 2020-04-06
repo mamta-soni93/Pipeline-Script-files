@@ -15,6 +15,7 @@ pipeline {
                 }
 			steps {
                     bat 'java -version'
+					bat "mvn clean install"
 				} 
       }
     }
