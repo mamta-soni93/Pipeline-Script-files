@@ -10,17 +10,13 @@ pipeline {
            }
       }
       stage('Maven Build'){
-           steps{
-              bat "mvn clean install"
-          }
+		   tools {
+                   jdk "JAVA_HOME"
+                }
+			steps {
+                    bat 'java -version'
+				} 
       }
-        stage('Push jar On Artifactory'){
-            steps {
-               script {
-                 uploadArtifact()
-               }
-            }
-          }
     }
 }
 def uploadArtifact() {
